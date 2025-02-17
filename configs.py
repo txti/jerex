@@ -1,6 +1,7 @@
+from typing import List, Optional
+
 from attr import dataclass
 from omegaconf import MISSING
-from typing import List, Optional
 
 
 @dataclass
@@ -133,7 +134,7 @@ class InferenceConfig:
 @dataclass
 class DistributionConfig:
     # gpus for training/inference
-    gpus: List[int] = []
+    gpus: List[int] = [0]
     # used accelerator for multi gpu training/inference (supported: dp, ddp)
     accelerator: str = ''
     # prepares data per node when using ddp as accelerator

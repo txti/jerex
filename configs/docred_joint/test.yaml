@@ -2,15 +2,15 @@ dataset:
   test_path: ./data/datasets/docred_joint/test_joint.json
 
 model:
-  model_path: ./data/models/docred_joint/joint_multi_instance/model.ckpt
-  tokenizer_path: ./data/models/docred_joint/joint_multi_instance
-  encoder_config_path: ./data/models/docred_joint/joint_multi_instance
+  model_path: ./data/models-original/docred_joint/joint_multi_instance/model.ckpt
+  tokenizer_path: ./data/models-original/docred_joint/joint_multi_instance
+  encoder_config_path: ./data/models-original/docred_joint/joint_multi_instance
 
 inference:
   test_batch_size: 1
 
 distribution:
-  gpus: []
+  gpus: [0]
   accelerator: ''
   prepare_data_per_node: false
 

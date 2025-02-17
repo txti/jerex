@@ -1,7 +1,7 @@
 datasets:
-  train_path: ./data/datasets/docred_joint/train_joint.json
-  valid_path: ./data/datasets/docred_joint/dev_joint.json
-  types_path: ./data/datasets/docred_joint/types.json
+  train_path: ./data/datasets/docred-ie/train_joint_qcode.json
+  valid_path: ./data/datasets/docred-ie/dev_joint_qcode.json
+  types_path: ./data/datasets/docred-ie/types.json
 
 model:
   model_type: joint_multi_instance

@@ -6,11 +6,10 @@ from multiprocessing import Lock
 import pytorch_lightning as pl
 import torch
 import transformers
-from pytorch_lightning import loggers
-from pytorch_lightning.callbacks import ModelCheckpoint, LearningRateMonitor
+from pytorch_lightning.callbacks import LearningRateMonitor, ModelCheckpoint
 from transformers import AdamW, BertConfig, BertTokenizer
 
-from configs import TrainConfig, TestConfig
+from configs import TestConfig, TrainConfig
 from jerex import models, util
 from jerex.data_module import DocREDDataModule
 
@@ -359,7 +358,8 @@ def test(cfg: TestConfig):
                                             max_spans_inference=cfg.inference.max_spans,
                                             max_coref_pairs_inference=cfg.inference.max_coref_pairs,
                                             max_rel_pairs_inference=cfg.inference.max_rel_pairs,
-                                            encoder_path=None, **overrides)
+                                            encoder_path=None, **overrides
+                                            )
 
     tokenizer = BertTokenizer.from_pretrained(cfg.model.tokenizer_path,
                                               do_lower_case=model.hparams.lowercase,
